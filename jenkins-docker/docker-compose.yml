@@ -11,3 +11,5 @@ services:
     volumes:
     - /storage/jenkins:/var/jenkins_home
     - /var/run/docker.sock:/var/run/docker.sock
+#### Mapping User Jenkins to Group Docker
+    user: "1000:994"
