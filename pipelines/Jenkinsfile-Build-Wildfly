@@ -2,6 +2,7 @@ pipeline {
   environment {
     registry = "registry.citsmartcloud.com/teste"
     registryCredential = 'registry_superuser'
+    dockerImage = ''
   }
   agent any
   stages {
