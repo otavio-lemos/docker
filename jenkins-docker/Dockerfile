@@ -1,7 +1,6 @@
 FROM jenkins/jenkins:lts
 MAINTAINER Otavio Lemos, otavio@olec.com.br
 
-
 USER root
 
 RUN apt-get update && \
