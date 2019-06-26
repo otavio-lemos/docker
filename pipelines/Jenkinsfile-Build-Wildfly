@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    registry = "registry.citsmartcloud.com/teste"
+    registry = "registry.citsmartcloud.com/templates/wildflycitsmart"
     registryCredential = 'registry_superuser'
     dockerImage = ''
   }
@@ -29,7 +29,7 @@ pipeline {
     }
     stage('Remove docker image') {
       steps{
-        sh "docker rmi $registry:$BUILD_NUMBER"
+        sh "docker rmi $registry:latest"
       }
     }
   }
