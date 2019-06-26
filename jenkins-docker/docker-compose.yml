@@ -4,6 +4,7 @@ services:
     container_name: jenkins
     image: otaviera/jenkins-docker
     environment:
+#### Option for a specific cacerts, disable SNI extension and endpoint identification 
     - JAVA_OPTS=-Djavax.net.ssl.trustStoreType=JKS -Djavax.net.ssl.trustStore=/var/jenkins_home/.cacerts/cacerts -Djavax.net.ssl.trustStorePassword=changeit -Dcom.sun.jndi.ldap.object.disableEndpointIdentification=true -Djsse.enableSNIExtension=false
     ports:
     - 8080:8080
@@ -11,5 +12,5 @@ services:
     volumes:
     - /storage/jenkins:/var/jenkins_home
     - /var/run/docker.sock:/var/run/docker.sock
-#### Mapping User Jenkins to Group Docker
+#### Mapping User Jenkins (1000) to Group Docker (994)
     user: "1000:994"
