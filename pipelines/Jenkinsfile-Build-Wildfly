@@ -18,11 +18,6 @@ pipeline {
         }
       }
     }
-    stage('Create container'){
-    steps{
-    step([$class: 'DockerComposeBuilder', dockerComposeFile: 'docker-compose-build.yml', option: [$class: 'StartService', scale: 1, service: 'citSMART'], useCustomDockerComposeFile: true])
-    }
-    }
      stage('Push registry') {
       steps{
         script {
